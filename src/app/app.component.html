@@ -1,0 +1,45 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav">
+  <a class="active" href="#home"> 
+<select (select)="getBanks()" (change)="getBanks($event.target.value)">
+ <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+</select></a>
+    
+ 
+  <div class="search-container">
+    <form>
+      <input type="text" placeholder="Search.." (input)="filterBanks($event.target.value)" name="search">
+      <button type="button"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+    
+</div>
+<div>
+
+
+<table>
+  <tr>
+    <th>Bank Name</th>
+    <th>Branch</th>
+    <th>IFSC Code</th>
+    
+    <th>Address</th>
+      
+  </tr>
+  <tr *ngFor="let bank of banks">
+    <td>{{bank.bank_name}}</td>
+    <td>{{bank.branch}}</td>
+    <td>{{bank.ifsc}}</td>
+   
+
+    <td>{{bank.address}}</td>
+      
+  </tr>
+  
+    
+</table>
+
+</div>
+
+<router-outlet></router-outlet>
