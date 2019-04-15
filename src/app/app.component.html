@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="topnav">
   <a class="active" href="#home"> 
-<select (select)="getBanks()" (change)="getBanks($event.target.value)">
+<select (change)="getBanks($event.target.value)">
  <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
 </select></a>
     
