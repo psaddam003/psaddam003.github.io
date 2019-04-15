@@ -28,8 +28,8 @@ export class AppComponent {
   public getBanks(city){
   let url = "https://vast-shore-74260.herokuapp.com/banks?city=" + city.toUpperCase();
     return this.httpClient.get(url).subscribe(data=>{
-    this.banks = data.slice();
-    this.oldBanks = data.slice();
+    this.banks = data;
+    this.oldBanks = this.banks.slice();
     })
 }
 
